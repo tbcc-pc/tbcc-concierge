@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BCC Property Concierge — One Call. One Standard. One Accountable Crew.</title>
+<meta name="description" content="BCC Property Concierge, a service of The Blue Collar Crew. One trusted contact for every repair, project, and to-do — scoped right, fully documented, handled by vetted trades in Southern Indiana.">
+<!-- Payments wired 2026-06-02: PayPal one-time links (Home Profile, TRE) + subscription buttons (Watch/Hero/Family); JotForm embedded. Estate = Apply→contact. -->
+<style>
+  :root{
+    --navy:#1a2e4d; --navy2:#2e5984; --sky:#7eb2de; --ink:#11141a;
+    --grey:#5c6470; --line:#e3e8ef; --tint:#f4f7fb; --gold:#b08e4a; --white:#fff;
+    --serif:Georgia,'Times New Roman',serif; --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);line-height:1.6;background:#fff}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:var(--serif);color:var(--navy);line-height:1.15;font-weight:700}
+  .label{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--navy2);font-weight:700}
+  .gold{color:var(--gold)}
+  a{color:var(--navy2)}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{height:46px;width:auto}
+  .brand b{font-family:var(--serif);color:var(--navy);font-size:19px;letter-spacing:1px}
+  .navlinks{display:flex;gap:26px;align-items:center}
+  .navlinks a{color:var(--ink);text-decoration:none;font-size:15px;font-weight:600}
+  .navlinks a:hover{color:var(--navy2)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px;border:none;cursor:pointer;transition:.2s}
+  .btn:hover{background:var(--navy2)}
+  .btn.gold{background:var(--gold)} .btn.gold:hover{filter:brightness(1.08)}
+  .btn.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+  .btn.ghost:hover{background:var(--navy);color:#fff}
+  .menu-toggle{display:none;background:none;border:none;font-size:28px;color:var(--navy);cursor:pointer}
+
+  /* hero */
+  .hero{background:linear-gradient(160deg,#fff 0%,var(--tint) 100%);padding:78px 0 64px;text-align:center}
+  .hero h1{font-size:52px;margin-bottom:18px}
+  .hero p.sub{font-size:21px;color:var(--grey);max-width:760px;margin:0 auto 30px}
+  .hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .tag{font-family:var(--serif);font-style:italic;color:var(--navy2);font-size:18px;margin-bottom:10px}
+
+  section{padding:62px 0;border-top:1px solid var(--line)}
+  section h2{font-size:36px;margin-bottom:10px}
+  .lead{font-size:18px;color:var(--grey);max-width:780px;margin-bottom:34px}
+  .center{text-align:center} .center .lead{margin-left:auto;margin-right:auto}
+
+  .problem{background:var(--tint);border-left:6px solid var(--gold);padding:26px 30px;border-radius:10px;font-size:19px;color:#41495a}
+
+  .grid{display:grid;gap:22px}
+  .g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+  .card{border:1px solid var(--line);border-radius:12px;padding:26px;background:#fff}
+  .card h3{font-size:21px;margin-bottom:8px}
+  .card p{color:var(--grey);font-size:15.5px}
+
+  .feature{display:flex;gap:16px;align-items:flex-start;margin-bottom:18px}
+  .feature .dot{flex:none;width:14px;height:14px;background:var(--navy2);border-radius:3px;margin-top:7px}
+  .feature h3{font-size:19px} .feature p{color:var(--grey);font-size:15.5px}
+
+  .profile{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;border-radius:16px;padding:44px}
+  .profile h2{color:#fff} .profile .lead{color:#d7e2f0}
+  .profile .price{font-size:20px;font-weight:700;margin:18px 0 24px}
+
+  .steps{counter-reset:s;display:grid;gap:18px;grid-template-columns:repeat(4,1fr)}
+  .step{position:relative;padding-left:0}
+  .step .n{width:46px;height:46px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:var(--serif);font-size:20px;margin-bottom:12px}
+  .step h3{font-size:17px;margin-bottom:4px} .step p{color:var(--grey);font-size:14.5px}
+
+  .svc{columns:3;column-gap:30px;font-size:16px}
+  .svc div{break-inside:avoid;padding:7px 0;border-bottom:1px solid var(--line);color:var(--ink)}
+  .svc div:before{content:"•";color:var(--navy2);font-weight:700;margin-right:10px}
+
+  .tier{position:relative}
+  .tier .pname{font-family:var(--serif);font-size:22px;color:var(--navy);font-weight:700}
+  .tier .pprice{font-size:30px;font-weight:800;color:var(--navy);margin:6px 0 14px}
+  .tier .pprice span{font-size:15px;font-weight:600;color:var(--grey)}
+  .tier ul{list-style:none;margin-bottom:22px}
+  .tier li{font-size:15px;color:#41495a;padding:6px 0 6px 24px;position:relative}
+  .tier li:before{content:"✓";color:var(--navy2);position:absolute;left:0;font-weight:700}
+  .tier.feat{border:2px solid var(--gold);box-shadow:0 12px 30px rgba(26,46,77,.10)}
+  .tier .ribbon{position:absolute;top:-13px;right:18px;background:var(--gold);color:#fff;font-size:12px;font-weight:700;letter-spacing:1px;padding:4px 12px;border-radius:20px}
+
+  .realtor{background:var(--ink);color:#fff}
+  .realtor h2{color:#fff} .realtor .lead{color:#c2ccd9} .realtor .label{color:var(--sky)}
+  .realtor .card{background:#1c2330;border-color:#2b3344} .realtor .card h3{color:#fff} .realtor .card p{color:#aeb8c6}
+  .realtor .note{font-style:italic;color:#aeb8c6;font-size:15px;margin-top:8px}
+
+  .faq details{border-bottom:1px solid var(--line);padding:18px 0}
+  .faq summary{font-family:var(--serif);font-size:19px;color:var(--navy);font-weight:700;cursor:pointer;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:before{content:"+";color:var(--gold);font-weight:700;margin-right:12px}
+  .faq details[open] summary:before{content:"–"}
+  .faq p{color:var(--grey);font-size:16px;margin-top:12px}
+
+  /* contact */
+  .contact{background:var(--tint)}
+  .contact .grid{grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+  .formbox{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px}
+  .formbox label{display:block;font-weight:600;font-size:14px;margin:14px 0 6px;color:var(--ink)}
+  .formbox input,.formbox select,.formbox textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:15px;font-family:var(--sans)}
+  .formbox textarea{min-height:90px;resize:vertical}
+  .reach a{display:flex;align-items:center;gap:14px;padding:16px;border:1px solid var(--line);border-radius:10px;background:#fff;text-decoration:none;color:var(--ink);font-weight:600;margin-bottom:12px;font-size:16px}
+  .reach a:hover{border-color:var(--navy2)}
+  .reach .ic{font-size:22px}
+  .qr{margin-top:8px;text-align:center}
+  .qr img{width:150px;border:1px solid var(--line);border-radius:10px;padding:8px;background:#fff}
+
+  footer{background:var(--navy);color:#cdd8e6;padding:40px 0 30px;font-size:14px}
+  footer .frow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;align-items:center}
+  footer a{color:#fff}
+  footer .powered{font-family:var(--serif);font-style:italic}
+  .disc{border-top:1px solid #2b456b;padding-top:14px;margin-top:18px;font-size:12px;color:#9fb0c5}
+
+  @media(max-width:860px){
+    .navlinks{display:none} .menu-toggle{display:block}
+    .navlinks.open{display:flex;position:absolute;top:74px;left:0;right:0;background:#fff;flex-direction:column;padding:18px 24px;border-bottom:1px solid var(--line);gap:16px}
+    .hero h1{font-size:34px} .hero p.sub{font-size:18px}
+    .g2,.g3,.g4{grid-template-columns:1fr} .steps{grid-template-columns:1fr 1fr}
+    .svc{columns:2} .contact .grid{grid-template-columns:1fr} section h2{font-size:28px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><img src="logo.png" alt="BCC Property Concierge"><b>BCC&nbsp;Property&nbsp;Concierge</b></div>
+    <nav class="navlinks" id="nav">
+      <a href="#profile">Home Profile</a>
+      <a href="#services">Services</a>
+      <a href="#membership">Membership</a>
+      <a href="#realtors">Realtors</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn" href="#contact">Request Service</a>
+    </nav>
+    <button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div class="tag">One call. One standard. One accountable crew.</div>
+    <h1>We Don't Guess.<br>We Already Know Your Home.</h1>
+    <p class="sub">One trusted contact for every repair, project, and to-do — backed by a complete digital profile of your home, so you get the right answer and the right trade every time.</p>
+    <div class="cta">
+      <a class="btn" href="#contact">Request Service</a>
+      <a class="btn ghost" href="sms:+18125255489">Text Us — (812) 525-5489</a>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section>
+  <div class="wrap">
+    <div class="problem">You post "anyone know a guy?" and roll the dice. You get a generic handyman who doesn't understand your home, isn't sure what he's looking at, and gives you a generic answer. There's a better way.</div>
+  </div>
+</section>
+
+<!-- HOME PROFILE -->
+<section id="profile">
+  <div class="wrap">
+    <div class="profile">
+      <div class="label" style="color:var(--sky)">Start Here</div>
+      <h2>The Home Profile</h2>
+      <p class="lead">We document your entire home once — every mechanical system (HVAC, water heater, panel, plumbing, sump) with brand, type &amp; age; every room; every interior and exterior item — stored securely. So when you call, we don't guess: we send the right trade for <em>your</em> home, not a generic person and a hope.</p>
+      <div class="price">$299 — or included free when you start a Home Hero+ membership.</div>
+      <a class="btn gold" href="https://www.paypal.com/ncp/payment/8KKST356ESDV4">Book the Home Profile</a>
+      <a class="btn ghost" style="color:#fff;border-color:#fff" href="#contact">Ask a Question</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONCIERGE -->
+<section>
+  <div class="wrap">
+    <div class="label">More than a contractor — a concierge</div>
+    <h2>You Don't Have to Be Home.</h2>
+    <p class="lead">Busy? Out of town? One call, one email — done.</p>
+    <div class="grid g2">
+      <div class="feature"><div class="dot"></div><div><h3>We coordinate the trades</h3><p>You make one call. We handle scheduling, the people, and the follow-through.</p></div></div>
+      <div class="feature"><div class="dot"></div><div><h3>Multiple estimates, your choice</h3><p>We gather competing bids and give you a clear side-by-side breakdown to choose from.</p></div></div>
+      <div class="feature"><div class="dot"></div><div><h3>On-site quality control</h3><p>We're there to hold the work to our standard and yours — so you don't have to be.</p></div></div>
+      <div class="feature"><div class="dot"></div><div><h3>Secure key holding (optional)</h3><p>Keep a key or code in our secure location and the work gets done while you're away.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="label">What we handle</div>
+    <h2>If It's Part of Your Home, We Handle It.</h2>
+    <p class="lead">A vetted trade for every job — coordinated, documented, and backed by one accountable contact.</p>
+    <div class="svc">
+      <div>Plumbing</div><div>Electrical</div><div>HVAC</div><div>Carpentry</div>
+      <div>Drywall &amp; Paint</div><div>Flooring</div><div>Masonry</div><div>Roofing &amp; Gutters</div>
+      <div>Doors &amp; Windows</div><div>Fixtures &amp; Appliances</div><div>Decks &amp; Fencing</div><div>Pressure Washing</div>
+      <div>Crawlspace &amp; Mold</div><div>Seasonal Maintenance</div><div>Preventive Maintenance</div>
+      <div>Honey-Do / Handyman</div><div>Inspection Repairs</div><div>Multi-Trade Projects</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section style="background:var(--tint)">
+  <div class="wrap center">
+    <div class="label">How it works</div>
+    <h2>Simple, Documented, Done Right.</h2>
+    <div class="steps" style="margin-top:32px">
+      <div class="step"><div class="n" style="margin:0 auto 12px">1</div><h3>Tell us</h3><p>Call, text, or send a photo and your address.</p></div>
+      <div class="step"><div class="n" style="margin:0 auto 12px">2</div><h3>We scope it</h3><p>A $99 visit — credited to your job if you move forward.</p></div>
+      <div class="step"><div class="n" style="margin:0 auto 12px">3</div><h3>One honest number</h3><p>You approve the price before anyone lifts a tool.</p></div>
+      <div class="step"><div class="n" style="margin:0 auto 12px">4</div><h3>Done &amp; documented</h3><p>A vetted crew does the work; we photograph and stand behind it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section id="membership">
+  <div class="wrap">
+    <div class="label">Membership — your home on standby</div>
+    <h2>Priority, Member Pricing, and a Crew That Knows Your Home.</h2>
+    <p class="lead">No contract. Cancel anytime. Member pricing is a real discount off fair-market — never below what it costs to do it right.</p>
+    <div class="grid g4">
+      <div class="card tier">
+        <div class="pname">Home Watch</div><div class="pprice">$49<span>/mo</span></div>
+        <ul><li>10% member pricing</li><li>Priority scheduling</li><li>Waived visit fee</li><li>Home Profile add-on ($149)</li></ul>
+        <div id="paypal-button-container-P-5YS71163LW325434JNIPQJ6A" class="ppsub"></div>
+      </div>
+      <div class="card tier feat">
+        <div class="ribbon">POPULAR</div>
+        <div class="pname">Home Hero</div><div class="pprice">$99<span>/mo</span></div>
+        <ul><li>Home Profile INCLUDED</li><li>15% member pricing</li><li>2 visits / year</li><li>Multi-bid on request</li></ul>
+        <div id="paypal-button-container-P-48D76209S00045935NIPQMZY" class="ppsub"></div>
+      </div>
+      <div class="card tier">
+        <div class="pname">Family Fix</div><div class="pprice">$199<span>/mo</span></div>
+        <ul><li>20% member pricing</li><li>Quarterly visits</li><li>Secure key/code on file</li><li>Multi-bid breakdowns</li></ul>
+        <div id="paypal-button-container-P-8SU30585YN347252MNIPQPOA" class="ppsub"></div>
+      </div>
+      <div class="card tier">
+        <div class="pname">Estate / Concierge</div><div class="pprice">$499<span>/mo</span></div>
+        <ul><li>Full absentee service</li><li>On-site QA on projects</li><li>Key holding + dedicated contact</li><li>Application required</li></ul>
+        <a class="btn ghost" href="#contact">Apply</a>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:22px;font-size:15px">Service visit $99 (credited) · most repair projects start around $500. Materials billed at cost.</p>
+  </div>
+</section>
+
+<!-- REALTORS -->
+<section id="realtors" class="realtor">
+  <div class="wrap">
+    <div class="label">For real estate agents</div>
+    <h2>Repairs Scoped &amp; Priced in 48 Hours.</h2>
+    <p class="lead">One contact for the repair list that's threatening your closing. We protect your deal — and your reputation.</p>
+    <div class="grid g3">
+      <div class="card"><h3>48-Hour Documented Proposal</h3><p>Forward the buyer's inspection response — one priced number per item, ready for your file.</p></div>
+      <div class="card"><h3>Pay-at-Closing</h3><p>Qualifying deals — your seller doesn't pay out of pocket now (small carry: 4% or flat $200).</p></div>
+      <div class="card"><h3>Completion Packet</h3><p>Before/after documentation for the lender and underwriter — proof, not a promise.</p></div>
+    </div>
+    <div style="margin-top:26px;padding:26px 30px;background:#1c2330;border:1px solid #2b3344;border-radius:12px">
+      <div class="label" style="color:var(--sky)">Pre-listing? The TRE Readiness Report</div>
+      <p style="color:#c8d2df;font-size:16.5px;margin-top:8px">Before your seller lists, we walk the home and deliver a contractor's prioritized repair plan — likely items ranked by what matters most at the buyer's review, tiered (must-fix / recommended / value-add), each one priced. Your seller fixes what matters on their terms.</p>
+      <p class="note">$249 — credits toward repairs booked. It is NOT a home inspection; it's a contractor's game plan.</p>
+      <div style="margin-top:16px"><a class="btn gold" href="https://www.paypal.com/ncp/payment/535KBHLP4X2UE">Book a TRE Report</a> <a class="btn ghost" style="color:#fff;border-color:#fff" href="#contact">Agent? Get Started</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="label">Straight answers</div>
+    <h2>Frequently Asked</h2>
+    <div class="faq" style="margin-top:20px">
+      <details><summary>Why aren't you the cheapest?</summary><p>Because the cheapest bid usually hides a cut corner that costs you double later. We scope it right, document it, and stand behind it. If lowest price is your only priority, we'll tell you honestly that we're not your fit.</p></details>
+      <details><summary>Do you do the work yourselves?</summary><p>We're a coordination crew. John personally scopes and manages your job; the hands-on work is done by vetted, licensed independent trade partners we've selected and ranked.</p></details>
+      <details><summary>Are your contractors employees?</summary><p>They're independent trade partners — vetted, licensed, insured, and held to our standards and documentation. You get the accountability of one company with the skill of specialized trades.</p></details>
+      <details><summary>What if something goes wrong?</summary><p>You call one person — us. It's documented before and after, so we make it right against the scope we agreed on.</p></details>
+      <details><summary>What areas do you serve?</summary><p>Columbus &amp; Bartholomew County, Edinburgh, Seymour, Hope, Greensburg, North Vernon, and south Indianapolis when the job fits.</p></details>
+      <details><summary>What don't you do?</summary><p>Cosmetic cover-ups that hide a real problem, lowest-bid races, or jobs we can't do to standard. We'll tell you the truth, even when it's not what you hoped.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="label">Get started</div>
+    <h2>Tell Us What's Going On.</h2>
+    <p class="lead">Fill this out and we'll get back to you fast — no phone tag required.</p>
+    <div class="grid">
+      <div class="formbox">
+        <!-- OPTION A: paste your JotForm iframe inside #form-embed and delete the <form> below.
+             OPTION B: keep this form and set action to your JotForm/Formspree endpoint. -->
+        <div id="form-embed">
+          <iframe
+            id="JotFormIFrame-261524683459062"
+            title="Request Service"
+            onload="window.parent.scrollTo(0,0)"
+            allowtransparency="true"
+            allow="geolocation; microphone; camera; fullscreen; payment"
+            src="https://form.jotform.com/261524683459062"
+            frameborder="0"
+            style="min-width:100%;max-width:100%;height:760px;border:none;"
+            scrolling="no">
+          </iframe>
+          <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+          <script>window.jotformEmbedHandler && window.jotformEmbedHandler("iframe[id='JotFormIFrame-261524683459062']","https://form.jotform.com/");</script>
+        </div>
+      </div>
+      <div class="reach">
+        <a href="sms:+18125255489"><span class="ic">💬</span> Text us — (812) 525-5489</a>
+        <a href="tel:+18125255489"><span class="ic">📞</span> Call us — (812) 525-5489</a>
+        <a href="mailto:john@thebluecollarcrewllc.com"><span class="ic">✉️</span> john@thebluecollarcrewllc.com</a>
+        <div class="qr"><img src="qr-text.png" alt="Scan to text us"><div style="font-size:13px;color:var(--grey);margin-top:6px">Scan to text us</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <div><strong style="color:#fff;font-family:var(--serif);font-size:18px">BCC Property Concierge</strong><br>Columbus, Indiana · (812) 525-5489<br>john@thebluecollarcrewllc.com</div>
+      <div class="powered">Built by tradesmen. Backed by standards.<br>Powered by <a href="https://subs.thebluecollarcrewllc.com">The Blue Collar Crew</a> · <a href="https://subs.thebluecollarcrewllc.com">Trade partners →</a></div>
+    </div>
+    <div class="disc">BCC Property Concierge is a service of The Blue Collar Crew, LLC, a licensed Indiana general contractor. The TRE Readiness Report is a contractor's repair-planning advisory and is NOT a home inspection; it does not replace or satisfy a licensed home inspection (IC 25-20.2).</div>
+  </div>
+</footer>
+
+<script>
+  // close mobile menu on link click
+  document.querySelectorAll('#nav a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav').classList.remove('open')})});
+</script>
+
+<!-- PayPal subscription buttons — Watch / Hero / Family (SDK loaded once) -->
+<style>.ppsub{margin-top:14px}.ppsub iframe{max-width:100%}</style>
+<script src="https://www.paypal.com/sdk/js?client-id=AeuNzL5DQvNGKZxsBzmewb199to6e9-BD3_w9gbBO4dkndrl1mKEytNfRqwwWvUPoigmzYZnFh4D-Bl9&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  (function(){
+    function cfg(plan){
+      return {
+        style:{shape:'rect',color:'gold',layout:'vertical',label:'subscribe'},
+        createSubscription:function(data,actions){return actions.subscription.create({plan_id:plan});},
+        onApprove:function(data){alert('Thank you! Your membership is active — we\'ll be in touch shortly.');}
+      };
+    }
+    if(window.paypal){
+      paypal.Buttons(cfg('P-5YS71163LW325434JNIPQJ6A')).render('#paypal-button-container-P-5YS71163LW325434JNIPQJ6A');
+      paypal.Buttons(cfg('P-48D76209S00045935NIPQMZY')).render('#paypal-button-container-P-48D76209S00045935NIPQMZY');
+      paypal.Buttons(cfg('P-8SU30585YN347252MNIPQPOA')).render('#paypal-button-container-P-8SU30585YN347252MNIPQPOA');
+    }
+  })();
+</script>
+</body>
+</html>

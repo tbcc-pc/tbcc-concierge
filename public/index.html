@@ -169,7 +169,7 @@
       <h2>The Home Profile</h2>
       <p class="lead">We document your entire home once — every mechanical system (HVAC, water heater, panel, plumbing, sump) with brand, type &amp; age; every room; every interior and exterior item — stored securely. So when you call, we don't guess: we send the right trade for <em>your</em> home, not a generic person and a hope.</p>
       <div class="price">$299 — or included free when you start a Home Hero+ membership.</div>
-      <a class="btn gold" href="https://www.paypal.com/ncp/payment/8KKST356ESDV4">Book the Home Profile</a>
+      <a class="btn gold" href="https://form.jotform.com/261525772778066">Book the Home Profile</a>
       <a class="btn ghost" style="color:#fff;border-color:#fff" href="#contact">Ask a Question</a>
     </div>
   </div>
@@ -230,23 +230,23 @@
       <div class="card tier">
         <div class="pname">Home Watch</div><div class="pprice">$49<span>/mo</span></div>
         <ul><li>10% member pricing</li><li>Priority scheduling</li><li>Waived visit fee</li><li>Home Profile add-on ($149)</li></ul>
-        <div id="paypal-button-container-P-5YS71163LW325434JNIPQJ6A" class="ppsub"></div>
+        <a class="btn ghost" href="https://form.jotform.com/261524964384061">Join</a>
       </div>
       <div class="card tier feat">
         <div class="ribbon">POPULAR</div>
         <div class="pname">Home Hero</div><div class="pprice">$99<span>/mo</span></div>
         <ul><li>Home Profile INCLUDED</li><li>15% member pricing</li><li>2 visits / year</li><li>Multi-bid on request</li></ul>
-        <div id="paypal-button-container-P-48D76209S00045935NIPQMZY" class="ppsub"></div>
+        <a class="btn gold" href="https://form.jotform.com/261524964384061">Join</a>
       </div>
       <div class="card tier">
         <div class="pname">Family Fix</div><div class="pprice">$199<span>/mo</span></div>
         <ul><li>20% member pricing</li><li>Quarterly visits</li><li>Secure key/code on file</li><li>Multi-bid breakdowns</li></ul>
-        <div id="paypal-button-container-P-8SU30585YN347252MNIPQPOA" class="ppsub"></div>
+        <a class="btn ghost" href="https://form.jotform.com/261524964384061">Join</a>
       </div>
       <div class="card tier">
         <div class="pname">Estate / Concierge</div><div class="pprice">$499<span>/mo</span></div>
         <ul><li>Full absentee service</li><li>On-site QA on projects</li><li>Key holding + dedicated contact</li><li>Application required</li></ul>
-        <a class="btn ghost" href="#contact">Apply</a>
+        <a class="btn ghost" href="https://form.jotform.com/261525334765056">Apply</a>
       </div>
     </div>
     <p class="lead" style="margin-top:22px;font-size:15px">Service visit $99 (credited) · most repair projects start around $500. Materials billed at cost.</p>
@@ -268,7 +268,7 @@
       <div class="label" style="color:var(--sky)">Pre-listing? The TRE Readiness Report</div>
       <p style="color:#c8d2df;font-size:16.5px;margin-top:8px">Before your seller lists, we walk the home and deliver a contractor's prioritized repair plan — likely items ranked by what matters most at the buyer's review, tiered (must-fix / recommended / value-add), each one priced. Your seller fixes what matters on their terms.</p>
       <p class="note">$249 — credits toward repairs booked. It is NOT a home inspection; it's a contractor's game plan.</p>
-      <div style="margin-top:16px"><a class="btn gold" href="https://www.paypal.com/ncp/payment/535KBHLP4X2UE">Book a TRE Report</a> <a class="btn ghost" style="color:#fff;border-color:#fff" href="#contact">Agent? Get Started</a></div>
+      <div style="margin-top:16px"><a class="btn gold" href="https://form.jotform.com/261525628013048">Book a TRE Report</a> <a class="btn ghost" style="color:#fff;border-color:#fff" href="#contact">Agent? Get Started</a></div>
     </div>
   </div>
 </section>
@@ -340,24 +340,5 @@
   document.querySelectorAll('#nav a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav').classList.remove('open')})});
 </script>
 
-<!-- PayPal subscription buttons — Watch / Hero / Family (SDK loaded once) -->
-<style>.ppsub{margin-top:14px}.ppsub iframe{max-width:100%}</style>
-<script src="https://www.paypal.com/sdk/js?client-id=AeuNzL5DQvNGKZxsBzmewb199to6e9-BD3_w9gbBO4dkndrl1mKEytNfRqwwWvUPoigmzYZnFh4D-Bl9&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-<script>
-  (function(){
-    function cfg(plan){
-      return {
-        style:{shape:'rect',color:'gold',layout:'vertical',label:'subscribe'},
-        createSubscription:function(data,actions){return actions.subscription.create({plan_id:plan});},
-        onApprove:function(data){alert('Thank you! Your membership is active — we\'ll be in touch shortly.');}
-      };
-    }
-    if(window.paypal){
-      paypal.Buttons(cfg('P-5YS71163LW325434JNIPQJ6A')).render('#paypal-button-container-P-5YS71163LW325434JNIPQJ6A');
-      paypal.Buttons(cfg('P-48D76209S00045935NIPQMZY')).render('#paypal-button-container-P-48D76209S00045935NIPQMZY');
-      paypal.Buttons(cfg('P-8SU30585YN347252MNIPQPOA')).render('#paypal-button-container-P-8SU30585YN347252MNIPQPOA');
-    }
-  })();
-</script>
 </body>
 </html>

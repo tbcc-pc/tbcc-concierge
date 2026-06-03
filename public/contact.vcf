@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Long;John;;;
+FN:John Long
+ORG:BCC Property Concierge — The Blue Collar Crew
+TITLE:Owner
+TEL;TYPE=CELL,VOICE:+18125255489
+EMAIL;TYPE=WORK:john@thebluecollarcrewllc.com
+ADR;TYPE=WORK:;;627 Washington St;Columbus;IN;47201;USA
+URL:https://home.thebluecollarcrewllc.com
+NOTE:BCC Property Concierge — repairs scoped, priced, documented, and handled. Inside the F.C. Tucker Columbus office.
+END:VCARD

@@ -51,7 +51,7 @@ td.price{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
 .slab{flex:0 0 210px;font-size:13px;color:#4a4137}
 .sbar{flex:1;height:12px;background:#efe9e0;border-radius:8px;overflow:hidden}
 .sbar i{display:block;height:100%;border-radius:8px}
-.snum{flex:0 0 34px;text-align:right;font-family:var(--serif);font-weight:700;color:var(--ink)}
+.snum{flex:0 0 46px;text-align:right;font-family:var(--serif);font-weight:700;color:var(--ink)}
 @media(max-width:680px){.slab{flex-basis:130px}}
 </style></head>
 <body>
@@ -80,15 +80,16 @@ td.price{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
     </div>
     <div class="note">Each line is a real price range. The $249 report fee credits toward any work booked within 30 days. Pay-at-closing available for qualifying sellers and approved scopes.</div>
 
-    <div class="label" style="margin-top:24px">Market-readiness</div>
-    <h2>Readiness Score</h2>
-    <div class="note" style="margin-bottom:8px">Our estimate of how ready this home is to list &mdash; it climbs as each tier is completed. A readiness estimate to guide priorities, not a home-inspection rating.</div>
+    <div class="label" style="margin-top:24px">Sale-prep progress</div>
+    <h2>How Much of the Plan Is Done</h2>
+    <div class="note" style="margin-bottom:8px">The share of your recommended repair plan complete, weighted by sale impact &mdash; <b>lending &amp; safety 55% &middot; buyer-requested repairs 30% &middot; value-add 15%</b>. A measure of plan completion, not an opinion of the home's condition or a home inspection.</div>
     <div class="score">
-      <div class="srow"><span class="slab">Today, as-is</span><span class="sbar"><i style="width:62%;background:#e0a83b"></i></span><span class="snum">62</span></div>
-      <div class="srow"><span class="slab">After must-fix (Tier 1)</span><span class="sbar"><i style="width:80%;background:#cf9a52"></i></span><span class="snum">80</span></div>
-      <div class="srow"><span class="slab">After recommended (Tier 2)</span><span class="sbar"><i style="width:92%;background:#6fae6a"></i></span><span class="snum">92</span></div>
-      <div class="srow"><span class="slab">List-ready (+ value-add)</span><span class="sbar"><i style="width:98%;background:#2e8b57"></i></span><span class="snum">98</span></div>
+      <div class="srow"><span class="slab">Today &mdash; plan not started</span><span class="sbar"><i style="width:2%;background:#c9a05a"></i></span><span class="snum">0%</span></div>
+      <div class="srow"><span class="slab">After must-fix (Tier 1)</span><span class="sbar"><i style="width:55%;background:#cf9a52"></i></span><span class="snum">55%</span></div>
+      <div class="srow"><span class="slab">After recommended (Tier 2)</span><span class="sbar"><i style="width:85%;background:#6fae6a"></i></span><span class="snum">85%</span></div>
+      <div class="srow"><span class="slab">Full plan complete</span><span class="sbar"><i style="width:100%;background:#2e8b57"></i></span><span class="snum">100%</span></div>
     </div>
+    <div class="note" style="margin-top:6px">Tier weights based on industry data &mdash; FHA Minimum Property Requirements, NAR REALTORS&reg; Confidence Index, Cost vs. Value, home-inspection findings.</div>
 
     <div class="tier-h"><span class="pill t1">Tier 1</span><h2 style="margin:0">Must-fix — handle first</h2></div>
     <div class="note">Items tied to safety or lending that can hold up an FHA/conventional appraisal.</div>

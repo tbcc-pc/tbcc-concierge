@@ -1,0 +1,11 @@
+# 2026-11-17: this site is retired. Everything moved to Wardmark (www.wardmark.com).
+/partner-pay*          https://www.wardmark.com/partner-pay   301
+/partner-thank-you*    https://www.wardmark.com/partner-pay   301
+/checkout*             https://www.wardmark.com/checkout      301
+/estimates*            https://www.wardmark.com/estimate      301
+/for-agents*           https://www.wardmark.com/for-realtors  301
+/inspection-response*  https://www.wardmark.com/for-realtors  301
+/tre*                  https://www.wardmark.com/for-realtors  301
+/sample-tre*           https://www.wardmark.com/for-realtors  301
+/pay-at-closing*       https://www.wardmark.com/for-realtors  301
+/*                     https://www.wardmark.com/concierge     301
